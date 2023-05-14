@@ -36,7 +36,7 @@ UserRouter.post("/register", async (req, res) => {
 
 
 
-UserRouter.post("/sleepStuggle",userAuthentication, async (req, res) => {
+UserRouter.post("/sleepStuggle", async (req, res) => {
   let { nickname, userResponse } = req.body;
   await UserModel.findOneAndUpdate(
     { nickname },
@@ -49,7 +49,7 @@ UserRouter.post("/sleepStuggle",userAuthentication, async (req, res) => {
       displayMessage: "Successful",
     });
 });
-UserRouter.post("/goTobed",userAuthentication, async (req, res) => {
+UserRouter.post("/goTobed", async (req, res) => {
   let { nickname, userResponse } = req.body;
 
   await UserModel.findOneAndUpdate({ nickname }, { goTobed: userResponse });
@@ -60,7 +60,7 @@ UserRouter.post("/goTobed",userAuthentication, async (req, res) => {
       displayMessage: "Successful",
     });
 });
-UserRouter.post("/getOutofBed",userAuthentication, async (req, res) => {
+UserRouter.post("/getOutofBed", async (req, res) => {
   let { nickname, userResponse } = req.body;
 
   await UserModel.findOneAndUpdate({ nickname }, { getOutofBed: userResponse });
@@ -72,7 +72,7 @@ UserRouter.post("/getOutofBed",userAuthentication, async (req, res) => {
     });
 });
 
-UserRouter.post("/sleepHours",userAuthentication, async (req, res) => {
+UserRouter.post("/sleepHours", async (req, res) => {
   let { nickname, userResponse } = req.body;
   await UserModel.findOneAndUpdate({ nickname }, { sleepHours: userResponse });
   res
@@ -83,7 +83,7 @@ UserRouter.post("/sleepHours",userAuthentication, async (req, res) => {
     });
 });
 
-UserRouter.get("/sleepEfficiency",userAuthentication, async (req, res) => {
+UserRouter.get("/sleepEfficiency", async (req, res) => {
   let { nickname } = req.body;
 
   let user = await UserModel.findOne({ nickname });
