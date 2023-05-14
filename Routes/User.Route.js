@@ -96,10 +96,10 @@ UserRouter.get("/sleepEfficiency", async (req, res) => {
     const [time, modifier] = Time.split(" ");
     let [hours, minutes] = Time.split(":");
 
-    if (modifier == "Pm" && hours < 12) {
+    if (modifier == "PM" && hours < 12) {
       hours = parseInt(hours) + 12;
     }
-    if (modifier == "Am" && hours == 12) {
+    if (modifier == "AM" && hours == 12) {
       hours = parseInt(hours) - 12;
     }
     return hours;
