@@ -36,11 +36,11 @@ UserRouter.post("/register", async (req, res) => {
 
 
 
-UserRouter.post("/sleepStuggle", async (req, res) => {
+UserRouter.post("/sleepStruggle", async (req, res) => {
   let { nickname, userResponse } = req.body;
   await UserModel.findOneAndUpdate(
     { nickname },
-    { sleepStuggle: userResponse }
+    { sleepStruggle: userResponse }
   );
   res
     .status(200)
