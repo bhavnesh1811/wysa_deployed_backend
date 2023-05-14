@@ -83,7 +83,7 @@ UserRouter.post("/sleepHours", async (req, res) => {
     });
 });
 
-UserRouter.get("/sleepEfficiency", async (req, res) => {
+UserRouter.post("/sleepEfficiency", async (req, res) => {
   let { nickname } = req.body;
 
   let user = await UserModel.findOne({ nickname });
